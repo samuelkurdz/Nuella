@@ -3,7 +3,8 @@
     <div class="navbar">
       <div class="logo">
         <router-link to="/"><a>
-          <img src="@/assets/images/logo.png" alt="logo" width="125px">
+<!--          <img src="@/assets/images/logo.png" alt="logo" width="125px">-->
+          Nuella's Flair
         </a></router-link>
       </div>
       <nav>
