@@ -1,4 +1,8 @@
-# nuella
+##Nuella's Flair
+
+### Nuella's Flair is a consumer customized e-commerce organization.
+
+### Working In Nigeria, will soon extend to other parts of Africa.
 
 ## Project setup
 ```
@@ -14,11 +18,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
