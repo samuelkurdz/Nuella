@@ -6,11 +6,11 @@
       <div class="row row-2">
         <h2>All Products</h2>
         <select>
-          <option>Default Sorting</option>
-          <option>Sort by Price</option>
-          <option>Sort by Popularity</option>
-          <option>Sort by Rating</option>
           <option>Sort by Sales</option>
+          <option>Sort by Price</option>
+          <option>Sort by Rating</option>
+          <option>Default Sorting</option>
+          <option>Sort by Popularity</option>
         </select>
       </div>
 
@@ -18,13 +18,7 @@
         <div class="col-4" v-for="(product, index) in Products" :key="index">
           <img :src="product.productImage" alt="product">
           <h4>{{product.productName}}</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
+          <starsRatings :productRatings="product.ratings"></starsRatings>
           <p>#{{product.price}}</p>
         </div>
       </div>
@@ -53,10 +47,12 @@ import ProductNineImage from '@/assets/images/product-9.jpg';
 import ProductTenImage from '@/assets/images/product-10.jpg';
 import ProductElevenImage from '@/assets/images/product-11.jpg';
 import ProductTwelveImage from '@/assets/images/product-12.jpg';
+import StarsRatings from '@/components/StarRatings.vue';
 
 export default {
   name: 'Products',
   components: {
+    StarsRatings,
     NavBar,
   },
   data() {
@@ -65,7 +61,7 @@ export default {
         {
           productName: 'Red Printed T-Shirt',
           productImage: ProductOneImage,
-          ratings: 4.5,
+          ratings: 1.5,
           price: 3000,
           gender: 'male',
         },
@@ -79,21 +75,21 @@ export default {
         {
           productName: 'Grey Joggers',
           productImage: ProductThreeImage,
-          ratings: 3.5,
+          ratings: 2.5,
           price: 3700,
           gender: 'male',
         },
         {
           productName: 'Blue Polo',
           productImage: ProductFourImage,
-          ratings: 4.5,
+          ratings: 2.5,
           price: 2500,
           gender: 'male',
         },
         {
           productName: 'Canvas Shoes',
           productImage: ProductFiveImage,
-          ratings: 4.0,
+          ratings: 3.0,
           price: 6000,
           gender: 'male',
         },
@@ -107,7 +103,7 @@ export default {
         {
           productName: 'Multiple Coloured Soaks',
           productImage: ProductSevenImage,
-          ratings: 4.0,
+          ratings: 5.0,
           price: 3000,
           gender: 'male',
         },
@@ -128,25 +124,35 @@ export default {
         {
           productName: 'Black Patterned Canvas',
           productImage: ProductTenImage,
-          ratings: 4.0,
+          ratings: 3.0,
           price: 3800,
           gender: 'male',
         },
         {
           productName: 'Grey Casual Sneakers',
           productImage: ProductElevenImage,
-          ratings: 4.0,
+          ratings: 4.5,
           price: 4000,
           gender: 'male',
         },
         {
           productName: 'Black Joggers',
           productImage: ProductTwelveImage,
-          ratings: 4.0,
+          ratings: 2.0,
           price: 3500,
           gender: 'male',
         },
       ],
+      config: {
+        rating: 3.5,
+        isIndicatorActive: true,
+        style: {
+          fullStarColor: '#ff523b',
+          emptyStarColor: '#fff',
+          starWidth: 15,
+          starHeight: 15,
+        },
+      },
     };
   },
 };

@@ -8,7 +8,7 @@
         </a></router-link>
       </div>
       <nav>
-        <ul id="menu-items">
+        <ul id="menu-items" ref="menuItems">
           <router-link to="/" tag="li"><a>Home</a></router-link>
           <router-link to="/products" tag="li"><a>Products</a></router-link>
           <router-link to="/" tag="li"><a>About</a></router-link>
@@ -20,10 +20,10 @@
         <img src="@/assets/images/cart.png" alt="cart" width="25px" height="25px">
       </a></router-link>
       <img
-        src="@/assets/images/menu.png" onclick="menuToggle()"
+        src="@/assets/images/menu.png" @click="menuToggle"
         class="menu-icon" alt="cart" width="25px" height="25px">
     </div>
-<!--    slot for showing hero banner -->
+<!--    slot for showing hero banner on landing page only-->
     <slot></slot>
   </div>
 </template>
@@ -31,6 +31,18 @@
 <script>
 export default {
   name: 'NavBar',
+  mounted() {
+    this.$refs.menuItems.style.maxHeight = '0px';
+  },
+  methods: {
+    menuToggle() {
+      if (this.$refs.menuItems.style.maxHeight === '0px') {
+        this.$refs.menuItems.style.maxHeight = '250px';
+      } else {
+        this.$refs.menuItems.style.maxHeight = '0px';
+      }
+    },
+  },
 };
 </script>
 
