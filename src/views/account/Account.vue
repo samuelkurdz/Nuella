@@ -115,4 +115,10 @@ form a {
   transform: translateX(100px);
   transition: transform 0.8s;
 }
+/* media query for less than 600 screen size */
+//@media only screen and (min-width: 600px) {
+//  .form-container {
+//
+//  }
+//}
 </style>
