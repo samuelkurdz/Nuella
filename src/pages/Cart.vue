@@ -9,13 +9,13 @@
           <th>Quantity</th>
           <th>Subtotal</th>
         </tr>
-        <tr>
+        <tr v-for="(cartItem, index) in cart" :key="index">
           <td>
             <div class="cart-info">
-              <img src="@/assets/images/buy-1.jpg" alt="cart-item">
+              <img :src="cartItem.productImage" alt="cart-item">
               <div>
-                <p>Red Printed Shirt</p>
-                <small>Price: #2.500</small>
+                <p>{{cartItem.productName}}</p>
+                <small>Price: #{{cartItem.price}}</small>
                 <br>
                 <a href="#">Remove</a>
               </div>
@@ -24,41 +24,7 @@
           <td>
             <input type="number" min="1">
           </td>
-          <td>#5,000</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="@/assets/images/buy-2.jpg" alt="cart-item">
-              <div>
-                <p>Sneakers</p>
-                <small>Price: #5,500</small>
-                <br>
-                <a href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" min="1">
-          </td>
-          <td>#5,000</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="@/assets/images/buy-3.jpg" alt="cart-item">
-              <div>
-                <p>Joggers</p>
-                <small>Price: #3,500</small>
-                <br>
-                <a href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" min="1">
-          </td>
-          <td>#5,000</td>
+          <td>#{{cartItem.price}}</td>
         </tr>
       </table>
 
@@ -66,7 +32,7 @@
         <table>
           <tr>
             <td>Subtotal</td>
-            <td>#4,000</td>
+            <td>#{{subTotal}}</td>
           </tr>
           <tr>
             <td>Shipping Fees</td>
@@ -88,6 +54,22 @@ import NavBar from '@/components/NavBar.vue';
 export default {
   name: 'Cart',
   components: { NavBar },
+  data() {
+    return {
+    };
+  },
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+    subTotal() {
+      let subtotal = 0;
+      this.cart.forEach((cartItem) => {
+        subtotal += cartItem.price;
+      });
+      return subtotal;
+    },
+  },
 };
 </script>
 

@@ -126,6 +126,36 @@ export default new Vuex.Store({
         gender: 'male',
       },
     ],
+    cart: [
+      {
+        productName: 'Red Printed T-Shirt',
+        productImage: ProductOneImage,
+        ratings: 1.5,
+        price: 3000,
+        gender: 'male',
+      },
+      {
+        productName: 'Sneakers',
+        productImage: ProductTwoImage,
+        ratings: 4.0,
+        price: 4500,
+        gender: 'male',
+      },
+      {
+        productName: 'Black Patterned Canvas',
+        productImage: ProductTenImage,
+        ratings: 3.0,
+        price: 3800,
+        gender: 'male',
+      },
+      {
+        productName: 'Grey Casual Sneakers',
+        productImage: ProductElevenImage,
+        ratings: 4.5,
+        price: 4000,
+        gender: 'male',
+      },
+    ],
   },
   getters: {
     featuredProducts: (state) => state.products.slice(0, 4),

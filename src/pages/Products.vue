@@ -18,12 +18,10 @@
         <router-link
           to="/product-detail" tag="div" class="col-4"
           v-for="(product, index) in products" :key="index">
-<!--          <div class="col-4" v-for="(product, index) in products" :key="index">-->
             <img :src="product.productImage" alt="product">
             <h4>{{product.productName}}</h4>
             <starsRatings :productRatings="product.ratings"></starsRatings>
             <p>#{{product.price}}</p>
-<!--          </div>-->
         </router-link>
       </div>
       <div class="page-btn">
