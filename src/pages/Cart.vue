@@ -22,9 +22,9 @@
             </div>
           </td>
           <td>
-            <input type="number" min="1">
+            <input type="number" min="1" v-model="cartItem.numberOrdered">
           </td>
-          <td>#{{cartItem.price}}</td>
+          <td>#{{cartItem.price * cartItem.numberOrdered}}</td>
         </tr>
       </table>
 
@@ -65,7 +65,7 @@ export default {
     subTotal() {
       let subtotal = 0;
       this.cart.forEach((cartItem) => {
-        subtotal += cartItem.price;
+        subtotal += (cartItem.price * cartItem.numberOrdered);
       });
       return subtotal;
     },

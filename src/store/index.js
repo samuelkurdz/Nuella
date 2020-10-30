@@ -133,6 +133,7 @@ export default new Vuex.Store({
         ratings: 1.5,
         price: 3000,
         gender: 'male',
+        numberOrdered: 1,
       },
       {
         productName: 'Sneakers',
@@ -140,6 +141,7 @@ export default new Vuex.Store({
         ratings: 4.0,
         price: 4500,
         gender: 'male',
+        numberOrdered: 1,
       },
       {
         productName: 'Black Patterned Canvas',
@@ -147,6 +149,7 @@ export default new Vuex.Store({
         ratings: 3.0,
         price: 3800,
         gender: 'male',
+        numberOrdered: 2,
       },
       {
         productName: 'Grey Casual Sneakers',
@@ -154,6 +157,7 @@ export default new Vuex.Store({
         ratings: 4.5,
         price: 4000,
         gender: 'male',
+        numberOrdered: 3,
       },
     ],
   },
