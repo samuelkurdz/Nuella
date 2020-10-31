@@ -18,6 +18,9 @@ import ProductTwelveImage from '@/assets/images/product-12.jpg';
 
 Vue.use(Vuex);
 
+// sizes options in each product.. preferably array
+// e.g lg, sm, xxl for clothes
+// 45,44 43 for shoes etc
 export default new Vuex.Store({
   state: {
     testimonials: [
