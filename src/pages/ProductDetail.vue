@@ -5,33 +5,24 @@
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
-          <img src="@/assets/images/gallery-1.jpg" alt="gallery" width="100%" id="product-img">
+          <img :src="productImage" alt="gallery" width="100%" id="product-img">
           <div class="small-img-row">
-            <div class="small-img-col">
-              <img class="small-img" src="@/assets/images/gallery-1.jpg" alt="gallery" width="100%">
-            </div>
-            <div class="small-img-col">
-              <img class="small-img" src="@/assets/images/gallery-2.jpg" alt="gallery" width="100%">
-            </div>
-            <div class="small-img-col">
-              <img class="small-img" src="@/assets/images/gallery-3.jpg" alt="gallery" width="100%">
-            </div>
-            <div class="small-img-col">
-              <img class="small-img" src="@/assets/images/gallery-4.jpg" alt="gallery" width="100%">
+            <div class="small-img-col" v-for="(image, index) in product.displayImages" :key="index">
+              <img
+                class="small-img" :src="image"
+                alt="gallery" width="100%" @click="switchMainProductImage(image)">
             </div>
           </div>
         </div>
         <div class="col-2">
-          <p>home / T-shirt</p>
-          <h1>Red Printed T-shirt By Versace</h1>
-          <h4>#2,500</h4>
+          <p>home / {{product.productName}}</p>
+          <h1>{{product.productName}} By Versace</h1>
+          <h4>#{{product.price}}</h4>
           <select>
             <option>Select Size</option>
-            <option>XXL</option>
-            <option>XL</option>
-            <option>Large</option>
-            <option>Medium</option>
-            <option>Small</option>
+            <option value="size" v-for="(size, index) in product.sizes" :key="index">
+              {{size}}
+            </option>
           </select>
           <input type="number" value="1" min="0">
           <a href="#" class="btn">Add To Cart</a>
@@ -54,7 +45,7 @@
     <div class="small-container">
       <div class="row row-2">
         <h2>Related Products</h2>
-        <p>View more</p>
+        <p @click="showProductId">View more</p>
       </div>
     </div>
     <!-- products -->
@@ -120,6 +111,34 @@ import NavBar from '@/components/NavBar.vue';
 export default {
   name: 'ProductDetail',
   components: { NavBar },
+  data() {
+    return {
+      productId: this.$route.params.productId,
+      productImage: null,
+    };
+  },
+  methods: {
+    showProductId() {
+      console.log(this.productId, this.product);
+    },
+    switchMainProductImage(image) {
+      this.productImage = image;
+    },
+  },
+  computed: {
+    product() {
+      return this.$store.state.products[this.productId];
+    },
+  },
+  created() {
+    this.productImage = this.product.productImage;
+  },
+  // watch: {
+  //   // eslint-disable-next-line no-unused-vars
+  //   $route(to, from) {
+  //     this.productId = to.params.productId;
+  //   },
+  // },
 };
 </script>
 

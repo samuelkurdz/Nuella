@@ -28,8 +28,11 @@ const routes = [
         },
       },
       {
-        path: '/product-detail',
+        path: '/product-detail/:productId',
         component: ProductDetail,
+        meta: {
+          title: 'Product Detail - Nuella',
+        },
       },
       {
         path: '/cart',

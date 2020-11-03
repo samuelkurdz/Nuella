@@ -16,8 +16,8 @@
 
       <div class="row">
         <router-link
-          to="/product-detail" tag="div" class="col-4"
-          v-for="(product, index) in products" :key="index">
+          v-for="(product, index) in products" :key="index"
+          :to="`/product-detail/${index}`" tag="div" class="col-4">
             <img :src="product.productImage" alt="product">
             <h4>{{product.productName}}</h4>
             <starsRatings :productRatings="product.ratings"></starsRatings>

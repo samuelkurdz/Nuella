@@ -16,11 +16,12 @@ import ProductTenImage from '@/assets/images/product-10.jpg';
 import ProductElevenImage from '@/assets/images/product-11.jpg';
 import ProductTwelveImage from '@/assets/images/product-12.jpg';
 
+import ProductOneSubImage from '@/assets/images/gallery-2.jpg';
+import ProductOneSubImage2 from '@/assets/images/gallery-3.jpg';
+import ProductOneSubImage3 from '@/assets/images/gallery-4.jpg';
+
 Vue.use(Vuex);
 
-// sizes options in each product.. preferably array
-// e.g lg, sm, xxl for clothes
-// 45,44 43 for shoes etc
 export default new Vuex.Store({
   state: {
     testimonials: [
@@ -50,6 +51,13 @@ export default new Vuex.Store({
         ratings: 1.5,
         price: 3000,
         gender: 'male',
+        displayImages: [
+          ProductOneImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          'XXL', 'XL', 'Large', 'Medium', 'small',
+        ],
       },
       {
         productName: 'Sneakers',
@@ -57,6 +65,13 @@ export default new Vuex.Store({
         ratings: 4.0,
         price: 4500,
         gender: 'male',
+        displayImages: [
+          ProductTwoImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Grey Joggers',
@@ -64,6 +79,13 @@ export default new Vuex.Store({
         ratings: 2.5,
         price: 3700,
         gender: 'male',
+        displayImages: [
+          ProductThreeImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          '30x30', '30x32', '31x32', '31x33',
+        ],
       },
       {
         productName: 'Blue Polo',
@@ -71,6 +93,13 @@ export default new Vuex.Store({
         ratings: 2.5,
         price: 2500,
         gender: 'male',
+        displayImages: [
+          ProductFourImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          'XXL', 'XL', 'Large', 'Medium', 'small',
+        ],
       },
       {
         productName: 'Canvas Shoes',
@@ -78,6 +107,13 @@ export default new Vuex.Store({
         ratings: 3.0,
         price: 6000,
         gender: 'male',
+        displayImages: [
+          ProductFiveImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Black Pattern T-Shirt',
@@ -85,6 +121,13 @@ export default new Vuex.Store({
         ratings: 4.5,
         price: 3500,
         gender: 'male',
+        displayImages: [
+          ProductSixImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          'XXL', 'XL', 'Large', 'Medium', 'small',
+        ],
       },
       {
         productName: 'Multiple Coloured Soaks',
@@ -92,6 +135,13 @@ export default new Vuex.Store({
         ratings: 5.0,
         price: 3000,
         gender: 'male',
+        displayImages: [
+          ProductSevenImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          '30x30', '30x32', '31x32', '31x33',
+        ],
       },
       {
         productName: 'Fossil Black Watch',
@@ -99,6 +149,13 @@ export default new Vuex.Store({
         ratings: 4.0,
         price: 10000,
         gender: 'male',
+        displayImages: [
+          ProductEightImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          '7.5', '7', '6.5', '6',
+        ],
       },
       {
         productName: 'Road-Star Swiss Watch',
@@ -106,6 +163,13 @@ export default new Vuex.Store({
         ratings: 4.0,
         price: 13000,
         gender: 'male',
+        displayImages: [
+          ProductNineImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          '7.5', '7', '6.5', '6',
+        ],
       },
       {
         productName: 'Black Patterned Canvas',
@@ -113,6 +177,13 @@ export default new Vuex.Store({
         ratings: 3.0,
         price: 3800,
         gender: 'male',
+        displayImages: [
+          ProductTenImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Grey Casual Sneakers',
@@ -120,6 +191,13 @@ export default new Vuex.Store({
         ratings: 4.5,
         price: 4000,
         gender: 'male',
+        displayImages: [
+          ProductElevenImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Black Joggers',
@@ -127,6 +205,13 @@ export default new Vuex.Store({
         ratings: 2.0,
         price: 3500,
         gender: 'male',
+        displayImages: [
+          ProductTwelveImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          '30x30', '30x32', '31x32', '31x33',
+        ],
       },
     ],
     cart: [
@@ -137,6 +222,13 @@ export default new Vuex.Store({
         price: 3000,
         gender: 'male',
         numberOrdered: 1,
+        displayImages: [
+          ProductOneImage, ProductOneSubImage,
+          ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          'XXL', 'XL', 'Large', 'Medium', 'small',
+        ],
       },
       {
         productName: 'Sneakers',
@@ -145,6 +237,12 @@ export default new Vuex.Store({
         price: 4500,
         gender: 'male',
         numberOrdered: 1,
+        displayImages: [
+          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Black Patterned Canvas',
@@ -153,6 +251,12 @@ export default new Vuex.Store({
         price: 3800,
         gender: 'male',
         numberOrdered: 2,
+        displayImages: [
+          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
       {
         productName: 'Grey Casual Sneakers',
@@ -161,6 +265,12 @@ export default new Vuex.Store({
         price: 4000,
         gender: 'male',
         numberOrdered: 3,
+        displayImages: [
+          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
+        ],
+        sizes: [
+          42, 43, 44, 45, 46,
+        ],
       },
     ],
   },

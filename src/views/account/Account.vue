@@ -7,18 +7,18 @@
 <!--            <img src="@/assets/images/image1.png" alt="image" width="100%">-->
 <!--          </div>-->
           <div class="col-2">
+            <h2 style="text-align: center; margin-bottom: 20px">Nuella's Flair</h2>
             <div class="form-container">
               <div class="form-btn">
-                <span onclick="login()">Login</span>
+<!--                <span onclick="login()">Login</span>-->
                 <span onclick="register()">Register</span>
-                <hr id="indicator">
               </div>
-              <form id="login-form">
-                <input type="text" placeholder="User Name">
-                <input type="password" placeholder="password">
-                <button class="btn" type="submit">Login</button>
-                <a href="#">Forgot Password</a>
-              </form>
+<!--              <form id="login-form">-->
+<!--                <input type="text" placeholder="User Name">-->
+<!--                <input type="password" placeholder="password">-->
+<!--                <button class="btn" type="submit">Login</button>-->
+<!--                <a href="#">Forgot Password</a>-->
+<!--              </form>-->
               <form id="registration-form">
                 <input type="text" placeholder="User Name">
                 <input type="email" placeholder="Email">
@@ -94,9 +94,9 @@ form .form-btn:focus {
   outline: none;
 }
 
-#login-form {
-  left: -300px;
-}
+//#login-form {
+//  left: -300px;
+//}
 
 .registration-form {
   left: 0;
@@ -106,15 +106,6 @@ form a {
   font-size: 12px;
 }
 
-#indicator {
-  width: 100px;
-  border: none;
-  background: #ff523b;
-  height: 3px;
-  margin-top: 8px;
-  transform: translateX(100px);
-  transition: transform 0.8s;
-}
 /* media query for less than 600 screen size */
 //@media only screen and (min-width: 600px) {
 //  .form-container {
