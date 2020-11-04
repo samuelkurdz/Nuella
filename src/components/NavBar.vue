@@ -11,8 +11,8 @@
         <ul id="menu-items" ref="menuItems">
           <router-link to="/" tag="li"><a>Home</a></router-link>
           <router-link to="/products" tag="li"><a>Products</a></router-link>
-          <router-link to="/" tag="li"><a>About</a></router-link>
-          <router-link to="/" tag="li"><a>Contact</a></router-link>
+<!--          <router-link to="/" tag="li"><a>About</a></router-link>-->
+<!--          <router-link to="/" tag="li"><a>Contact</a></router-link>-->
           <router-link to="/account" tag="li"><a>Account</a></router-link>
         </ul>
       </nav>

@@ -222,55 +222,7 @@ export default new Vuex.Store({
         price: 3000,
         gender: 'male',
         numberOrdered: 1,
-        displayImages: [
-          ProductOneImage, ProductOneSubImage,
-          ProductOneSubImage2, ProductOneSubImage3,
-        ],
-        sizes: [
-          'XXL', 'XL', 'Large', 'Medium', 'small',
-        ],
-      },
-      {
-        productName: 'Sneakers',
-        productImage: ProductTwoImage,
-        ratings: 4.0,
-        price: 4500,
-        gender: 'male',
-        numberOrdered: 1,
-        displayImages: [
-          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
-        ],
-        sizes: [
-          42, 43, 44, 45, 46,
-        ],
-      },
-      {
-        productName: 'Black Patterned Canvas',
-        productImage: ProductTenImage,
-        ratings: 3.0,
-        price: 3800,
-        gender: 'male',
-        numberOrdered: 2,
-        displayImages: [
-          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
-        ],
-        sizes: [
-          42, 43, 44, 45, 46,
-        ],
-      },
-      {
-        productName: 'Grey Casual Sneakers',
-        productImage: ProductElevenImage,
-        ratings: 4.5,
-        price: 4000,
-        gender: 'male',
-        numberOrdered: 3,
-        displayImages: [
-          ProductOneSubImage, ProductOneSubImage2, ProductOneSubImage3,
-        ],
-        sizes: [
-          42, 43, 44, 45, 46,
-        ],
+        size: 'XXL',
       },
     ],
   },

@@ -18,13 +18,13 @@
           <p>home / {{product.productName}}</p>
           <h1>{{product.productName}} By Versace</h1>
           <h4>#{{product.price}}</h4>
-          <select>
-            <option>Select Size</option>
-            <option value="size" v-for="(size, index) in product.sizes" :key="index">
+          <select v-model="newCartItem.size">
+            <option disabled value="">Select Size</option>
+            <option :value="size" v-for="(size, index) in product.sizes" :key="index">
               {{size}}
             </option>
           </select>
-          <input type="number" value="1" min="0">
+          <input type="number" value="1" min="0" v-model.number="newCartItem.numberOrdered">
           <a href="#" class="btn">Add To Cart</a>
 
           <h3>
@@ -32,10 +32,9 @@
           </h3>
           <br>
           <p>
-            Gut ornare lectus sit amet est placerat in egestas erat,
-            imperdiet sed nisi porta lorem mollis aliquam ut
-            porttitor leo a diam nulla facilisi
-            nullam vehicula ipsum a arcu.
+            I love short sentences. I really do.
+            In any book filled with a series of long, expansive sentences,
+            a short sentence arrives like a gift.
           </p>
         </div>
       </div>
@@ -115,11 +114,24 @@ export default {
     return {
       productId: this.$route.params.productId,
       productImage: null,
+      newCartItem: {
+        productName: '',
+        productImage: '',
+        rating: 0,
+        gender: '',
+        numberOrdered: 0,
+        size: '',
+      },
     };
   },
   methods: {
     showProductId() {
       console.log(this.productId, this.product);
+      this.newCartItem.productName = this.product.productName;
+      // eslint-disable-next-line prefer-destructuring
+      this.newCartItem.productImage = this.product.displayImages[0];
+      this.newCartItem.gender = this.product.gender;
+      console.log(this.newCartItem);
     },
     switchMainProductImage(image) {
       this.productImage = image;

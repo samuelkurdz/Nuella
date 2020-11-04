@@ -16,7 +16,8 @@
               <div>
                 <p>{{cartItem.productName}}</p>
                 <small>Price: #{{cartItem.price}}</small>
-                <br>
+                <small>Size: {{cartItem.size}}</small>
+<!--                <br>-->
                 <a href="#">Remove</a>
               </div>
             </div>
